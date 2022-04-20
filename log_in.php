@@ -22,7 +22,10 @@ if ($result->num_rows>0)
 }
 else
 {
-    echo "Error<br>";
+    echo'<script>
+            confirm("Invalid username or password");
+            location.href = "https://people.eecs.ku.edu/~b884l228/"
+        </script>';
 }
     
 
