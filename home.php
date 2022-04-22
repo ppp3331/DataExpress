@@ -3,17 +3,21 @@
 ?>
 <!DOCTYPE html>
 <html>
-<body>
-<style>
-     body
+
+<head>
+        <style>
+        body
         {
-            background: linear-gradient(red, blue, purple, pink);
-        }
-</style>
-    <?php
-        echo "Welcome, ";
-        print_r ($_SESSION['username']);
-    ?>
+            background: linear-gradient(155deg, #38F9BA 35%, cyan);
+        }    
+        
+        </style>
+    </head>
+    <body>
+    <!-- <?php
+        // echo "Welcome, ";
+        // print_r ($_SESSION['username']);
+    ?> -->
 
 </body>
 </html>
