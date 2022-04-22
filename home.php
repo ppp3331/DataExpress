@@ -11,11 +11,5 @@
         }
 </style>
 </head>
-    <!-- <body> -->
-    <!-- <?php
-        // echo "Welcome, ";
-        // print_r ($_SESSION['username']);
-    ?> -->
 
-<!-- </body> -->
 </html>
