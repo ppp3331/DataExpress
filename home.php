@@ -5,12 +5,15 @@
 <html>
 <body>
 <style>
-     background-image: linear-gradient(blue, green);
-
+     body
+        {
+            background: linear-gradient(red, blue, purple, pink);
+        }
+</style>
     <?php
         echo "Welcome, ";
         print_r ($_SESSION['username']);
     ?>
-</style>
+
 </body>
 </html>
