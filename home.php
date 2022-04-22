@@ -3,16 +3,14 @@
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
-        <style>
+<style>
         body
         {
             background: linear-gradient(155deg, #38F9BA 35%, cyan);
-        }    
-        
-        </style>
-    </head>
+        }
+</style>
+</head>
     <body>
     <!-- <?php
         // echo "Welcome, ";
