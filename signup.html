@@ -30,6 +30,56 @@
             margin-left: 850;
 
         }
+
+        .bubbles{
+            animation: bubble-move var(--bubble-move-time) var(--bubble-move-delay) ease-in-out infinite;
+            position: absolute;
+            display: block;
+            height: var(--bubble-rad);
+            width: var(--bubble-rad); 
+            left: var(--bubble-left);
+            border-radius: 50%;
+            bottom: -75%;
+
+
+        }
+
+        .background-bubbles{
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden; 
+        }
+
+        @keyframes bubble-move {
+            0% {
+        background:white;
+        left: 50%;
+        bottom: 50%;
+    }
+    25% {
+        background: blue;
+        left: 0%;
+        bottom: 50%;
+    }
+    50% {
+        background: purple;
+        left: 90%;
+        bottom: 50%;
+    }
+    75% {
+        background: aqua;
+        left: 0%;
+        bottom: 50%;
+    }
+    100% {
+        background: white;
+        left: 50%;
+        bottom: 50%;
+    }
+            
+        }
+       
     </style>
 </head>
 
@@ -49,6 +99,24 @@
         </form>
     </div>
     <div id="pineapple"></div>
+
+    <div id="background-bubbles">
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+        <div class="bubbles"></div>
+    </div>
 </body>
 
 </html>
