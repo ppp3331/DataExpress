@@ -31,27 +31,28 @@
 
         }
 
-        .bubbles{
-            animation: bubble-move var(--bubble-move-time) var(--bubble-move-delay) ease-in-out infinite;
-            position: absolute;
-            display: block;
-            height: var(--bubble-rad);
-            width: var(--bubble-rad); 
-            left: var(--bubble-left);
-            border-radius: 50%;
-            bottom: -75%;
-
+        #bubbles{
+            position: relative;
+            height: 60px;
+            width: 60px;
+            bottom: 50%;
+            background-color: black;
+            animation-name: bubbles;
+            animation-duration: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
 
         }
 
-        .background-bubbles{
+        #background-bubbles{
             position: relative;
             height: 100vh;
             width: 100%;
             overflow: hidden; 
         }
 
-        @keyframes bubble-move {
+        @keyframes bubbles {
             0% {
         background:white;
         left: 50%;
