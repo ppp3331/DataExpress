@@ -1,15 +1,15 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
+
 <body>
-<style>
-        body
-        {
-            background: linear-gradient(155deg, #38F9BA 35%, cyan);
-        }
-</style>
-    </body>
+    <?php
+    echo "Welcome, ";
+    print_r($_SESSION['username']);
+    ?>
+
+</body>
 
 </html>

@@ -13,6 +13,7 @@ if ($mysqli->query($user)== TRUE)
     echo'<script>
             alert("Account created successfully");
             location.href = "https://people.eecs.ku.edu/~b884l228/"
+            
         </script>';
     
 }
