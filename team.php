@@ -34,7 +34,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
         
     </header>
     <div style="text-align: left; margin-left: 1300; position:absolute">
-        <text> Profile &nbsp; </text>
+    <text onclick="location.href='profile.php'" id="a"> Profile</text>
         <text onclick="location.href='logout.php'" id="a"> Log out</text>
     </div>
     <br><br>
