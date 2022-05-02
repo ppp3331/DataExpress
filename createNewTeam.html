@@ -28,12 +28,15 @@
         margin-left: 850;
 
     }
+    #a:hover{
+                color: blue;
+
+            }
 </style>
 </head>
 
 <body style="background-image: linear-gradient(to bottom right, #fc466b, #3f5efb);">
     <header>
-        Welcome, xxx
     </header>
     <div style="border-radius: 30px; border-color: #c9cfd4; border-style: solid; text-align: center; border-width: 2;
                             background-color: white; margin:150">
@@ -44,7 +47,9 @@
             <input required type="text" name="teamname"><br><br>
             <text>Team Description:</text><br>
             <textarea name="textarea" style="width:40%;height:100px;"></textarea><br><br>
-            <input type="submit" value="Create">
+            <input type="submit" value="Create"><br><br>
+            <div style="font-size: 15; text-align: center; align-items: center;">Already have a team?</div>
+            <button id= 'a' style="border:none; background-color:white; font-weight: 540;" onclick="location.href='jointeam.html'">Join a Team</button><br><br>
         </form>
     </div>
     <div id="pineapple"></div>
