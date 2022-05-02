@@ -9,7 +9,7 @@ if ($result->num_rows!=0)
 {
     echo'<script>
             alert("Already in team.");
-            location.href = "https://people.eecs.ku.edu/~b884l228/jointeam.html"
+            location.href = "https://people.eecs.ku.edu/~b884l228/team.php"
             
         </script>';
 }
