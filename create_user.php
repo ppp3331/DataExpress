@@ -19,7 +19,11 @@ if ($mysqli->query($user)== TRUE)
 }
 else
 {
-    echo "Error<br>";
+    echo' <script>
+            alert("Error");
+            location.href = "https://people.eecs.ku.edu/~b884l228/create_user.php"
+            
+     </script>';
 }
     
 

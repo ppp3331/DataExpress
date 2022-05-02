@@ -50,7 +50,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
             while ($row = $result->fetch_assoc())
             {
                 $tname=$row["name"];
-                $query1="SELECT username from users, join1, team where join1.team_ID=team.team_ID and join1.email=users.email and name='$tname'";
+                $query1="SELECT DISTINCT username from users, join1, team where join1.team_ID=team.team_ID and join1.email=users.email and name='$tname'";
                 $result1 = $mysqli->query($query1);
                 if ($result1->num_rows>0)
                 {
