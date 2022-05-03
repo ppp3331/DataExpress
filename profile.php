@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     $_SESSION['email'] = $email;
     //$_SESSION['password'] = $password;
     echo '<script>
-            location.href = "https://people.eecs.ku.edu/~b884l228/team.php"
+            location.href = "https://people.eecs.ku.edu/~b884l228/profile.html"
         </script>';
 } 
 
