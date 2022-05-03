@@ -1,0 +1,61 @@
+<html>
+<style>
+    text {
+        font-size: 18;
+        margin-right: 320;
+    }
+
+    input[type=text] {
+        width: 40%;
+        padding: 10px 15px;
+        margin: 8px 0;
+
+    }
+
+    input[type=password] {
+        width: 40%;
+        padding: 10px 15px;
+        margin: 8px 0;
+
+    }
+
+    #pineapple {
+        background-image: url(1907072.png);
+        width: 120;
+        height: 120;
+        background-size: contain;
+        margin-top: -470;
+        margin-left: 850;
+
+    }
+
+    #a:hover {
+        color: blue;
+
+    }
+</style>
+</head>
+
+<body style="background-color: #f0f4f7;">
+    <header>
+    </header>
+    <div style="border-radius: 30px; border-color: #c9cfd4; border-style: solid; text-align: center; border-width: 2;
+                            background-color: white; margin:100">
+        <h1>Create a New Post</h1><br><br>
+        <form action="create_post.php" method="post">
+            <text>Post Title:</text><br>
+            <input required type="text" name="posttitle"><br><br>
+            <text>Post Content:</text><br>
+            <textarea name="postcontent" style="width:40%;height:100px;"></textarea><br><br>
+            <text>Create Date:</text><br>
+            <input required type="date" name="creationtime"><br><br>
+            <text>Due Date:</text><br>
+            <input required type="date" name="duedate"><br><br>
+            <input type="submit" value="Create"><br><br>
+            <button id='a' style="border:none; background-color:white; font-weight: 540;"
+                onclick="location.href='home.php'">Back to Home</button><br><br>
+        </form>
+    </div>
+    <div id="pineapple"></div>
+</body>
+<html>
