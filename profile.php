@@ -22,12 +22,13 @@ if ($result->num_rows > 0) {
     <!DOCTYPE html>
     <html>
     <body>
-
+    <?php
     echo "<h1> Username: ".$username."</h1>";
-    echo "<h2> Email: " $email "</h2>";
-    echo "<h2> Team ID: " $team_ID "</h2>";
-
+    echo "<h2> Email: ".$email."</h2>";
+    echo "<h2> Teams: ".$team_ID."</h2>";
+    ?>
     </body>
+    </html>
 } 
 
 
