@@ -48,7 +48,7 @@ if (isset($_GET['tid'])) {
 
     </header>
     <div style="text-align: left; margin-left: 1300; position:absolute">
-        <text onclick="location.href='profile.php'" id="a"> Profile</text><br>
+        <text onclick="location.href='profile.php'" id="a"> Profile</text><br><br>
         <text onclick="location.href='logout.php'" id="a"> Log out</text>
     </div>
     <br><br>
@@ -57,12 +57,12 @@ if (isset($_GET['tid'])) {
     <div id="wrap">
         <?php
         $teamID = $_SESSION["teamid"];
-        $query = "SELECT DISTINCT creationTime,completionTime,dueDate,content,title FROM post,Access,team WHERE  Access.PostID=post.PostID AND Access.team_ID='$teamID'";
+        $query = "SELECT DISTINCT post.PostID,creationTime,completionTime,dueDate,content,title FROM post,Access,team WHERE  Access.PostID=post.PostID AND Access.team_ID='$teamID'";
         $result = $mysqli->query($query);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $title = $row["title"];
-                echo "<div id='div1'> <br><text id='text1'>" . $row["title"] . "</text><br><br><br>
+                echo "<div id='div1'> <br><text id='text1'>" . $row["title"] . "</text><br><br>
                         <div class='block'><br><div id='div2'> <text>Content:</text><br>
                         <text style='color: #706f6f;'>
                         &nbsp; &nbsp;&nbsp;&nbsp;" . $row["content"] . " </text><br><br>
@@ -74,7 +74,8 @@ if (isset($_GET['tid'])) {
                         &nbsp; &nbsp;&nbsp;&nbsp;" . $row["dueDate"] . " </text></div>
                         <br><div id='div2'> <text>Complete State:</text><br>
                         <text style='color: #706f6f;'>
-                        &nbsp; &nbsp;&nbsp;&nbsp;" . $row["completionTime"] . " </text></div></div></div>";
+                        &nbsp; &nbsp;&nbsp;&nbsp;" . $row["completionTime"] . " </text></div></div>
+                        <br><a href='changeState.php?pid=" . $row["PostID"] . "'>Change Complete State</a></div>";
             }
         }
 
