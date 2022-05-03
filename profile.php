@@ -15,7 +15,8 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
     .profile{
         margin: auto;
         text-align: center;
-        max-width: 400px;
+        max-width: 900px;
+        height: 500px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         background-image: linear-gradient(to right, #f0f4f7, #FFFACD, #E0FFFF);
     }  
