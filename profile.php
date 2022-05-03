@@ -8,20 +8,26 @@ if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-$user = "SELECT username, email, team_ID FROM users, join1 where username='$username' AND email='$email' AND teamID='$team_ID' AND users.email = join1.email;";
+$user = "SELECT username, email, team_ID FROM users, join1 where username='$username' AND email='$email' AND team_ID='$team_ID' AND users.email = join1.email;";
 $result = $mysqli->query($user);
 
 if ($result->num_rows > 0) {
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;
-    $_SESSION['teamID'] = $team_ID;
+    $_SESSION['team_ID'] = $team_ID;
     //$_SESSION['password'] = $password;
     echo '<script>
             location.href = "https://people.eecs.ku.edu/~b884l228/profile.html"
         </script>';
-    echo $username;
-    echo $email;
-    echo $team_ID;
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    echo "<h1> Username: ".$username."</h1>";
+    echo "<h2> Email: " $email "</h2>";
+    echo "<h2> Team ID: " $team_ID "</h2>";
+
+    </body>
 } 
 
 
