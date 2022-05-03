@@ -1,38 +1,57 @@
-<!-- <?php
-// session_start();
-// $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
-// $username = $_POST["username"];
-// $password = $_POST["password"];
-// $email = $_POST["email"];
-// if ($mysqli->connect_errno) {
-//     printf("Connect failed: %s\n", $mysqli->connect_error);
-//     exit();
-// }
-// $user = "SELECT username, email, team_ID FROM users, join1 where username='$username' AND email='$email' AND team_ID='$team_ID' AND users.email = join1.email;";
-// $result = $mysqli->query($user);
+<?php
+session_start();
+$mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
+        if ($mysqli->connect_errno) {
+            printf("Connect failed: %s\n", $mysqli->connect_error);
+            exit();
+        }
+?>
+    
+<!DOCTYPE html>
+    <html>
 
-// if ($result->num_rows > 0) {
-//     $_SESSION['username'] = $username;
-//     $_SESSION['email'] = $email;
-//     $_SESSION['team_ID'] = $team_ID;
-//     //$_SESSION['password'] = $password;
-//     echo '<script>
-//             location.href = "https://people.eecs.ku.edu/~b884l228/profile.html"
-//         </script>';
-//     <!DOCTYPE html>
-//     <html>
-//     <body>
-//     <?php
-//     echo "<h1> Username: ".$username."</h1>";
-//     echo "<h2> Email: ".$email."</h2>";
-//     echo "<h2> Teams: ".$team_ID."</h2>";
-//     ?>
-//     </body>
-//     </html>
-// } 
+    <head>
+    <style>
+    .profile{
+        margin: auto;
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }  
+    </style>
+    </head>
+    <body style="background-color:#f0f4f7;">
+<?php
+    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
+    $team_ID = $_SESSION['team_ID'];
+    $user = "SELECT username, email, team_ID FROM users, join1 WHERE username='$username' AND users.email='$email' AND join1.team_ID='$team_ID' AND users.email = join1.email;";
+    $result = $mysqli->query($user);
+    
+    //echo '<script>
+//     location.href = "https://people.eecs.ku.edu/~b884l228/profile.html"
+//     </script>';
+    ?>
 
+<div class="profile">
+    <h1>PROFILE:</h1>
+    <h3> User: <?php echo $username;?></h3>
+    <h3> Email: <?php echo $email;?> </h3>
+    <h3> Team: <?php while($row = $result -> fetch_assoc()){
+        echo $row["team_ID"];}?> </h3> 
+    
+    <!-- echo "<br>";
+    echo $email;
+    echo "<br>";
+    echo '$team_ID'; -->
 
-// $mysqli->close();
+   
+    
 
+   
+    
+    </body>
+    </html>
+   
 
-?> -->
+    
