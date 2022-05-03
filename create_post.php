@@ -5,18 +5,22 @@ if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-$posttitle = $_POST["posttitle"];
-$postcontent = $_POST["postcontent"];
-$creationtime = $POST["creationtime"];
-$duedate = $POST["duedate"];
-$post = "INSERT INTO post (content,title) VALUES ('$postcontent','$posttitle');";
+$creationtime = $_POST["creationtime"];
+$completionTime = $_POST["completionTime"];
+$duedate = $_POST["duedate"];
+$content = $_POST["postcontent"];
+$title = $_POST["posttitle"];
+$post = "INSERT INTO post (creationTime, completionTime, dueDate,content,title) VALUES ('$creationtime', '$completionTime', '$duedate', '$content', '$title');";
 if ($mysqli->query($post) == TRUE) {
 
-    $query = "SELECT PostID from post where title='$posttitle';";
+    $query = "SELECT PostID from post where title='$title';";
     $result = $mysqli->query($query);
     $r = $result->fetch_assoc();
     $PostId = $r["PostID"];
-    $team_ID = $_SESSION['team_ID'];
+    if (isset($_GET['tid'])) {
+        $_SESSION['teamid'] = $_GET['tid'];
+    }
+    $team_ID = $_SESSION["teamid"];
     $query1 = "INSERT INTO Access (PostID, team_ID) VALUES ('$PostId', '$team_ID');";
     $mysqli->query($query1);
 

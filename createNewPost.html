@@ -40,7 +40,7 @@
     <header>
     </header>
     <div style="border-radius: 30px; border-color: #c9cfd4; border-style: solid; text-align: center; border-width: 2;
-                            background-color: white; margin:100">
+                            background-color: white; margin-left:100;margin-right: 100;margin-top: 50;">
         <h1>Create a New Post</h1><br><br>
         <form action="create_post.php" method="post">
             <text>Post Title:</text><br>
@@ -48,9 +48,11 @@
             <text>Post Content:</text><br>
             <textarea name="postcontent" style="width:40%;height:100px;"></textarea><br><br>
             <text>Create Date:</text><br>
-            <input required type="date" name="creationtime"><br><br>
+            <input type="text" name="creationtime"><br><br>
             <text>Due Date:</text><br>
-            <input required type="date" name="duedate"><br><br>
+            <input type="text" name="duedate"><br><br>
+            <text>Complete State:</text><br>
+            <input type="text" name="completionTime"><br><br>
             <input type="submit" value="Create"><br><br>
             <button id='a' style="border:none; background-color:white; font-weight: 540;"
                 onclick="location.href='home.php'">Back to Home</button><br><br>
