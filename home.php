@@ -5,6 +5,9 @@ if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
+if (isset($_GET['tid'])) {
+    $_SESSION['teamid'] = $_GET['tid'];
+    }
 ?>
 
 <html>
@@ -49,10 +52,12 @@ if ($mysqli->connect_errno) {
         <text onclick="location.href='logout.php'" id="a"> Log out</text>
     </div>
     <br><br>
-    <h1 style="text-align: center;">Check Your Posts</h1><br>
+    <h1 style="text-align: center;">Check Your Posts</h1>
+    <div style="text-align:center;">Team ID: <?php echo $_SESSION["teamid"] ?></div><br>
     <div id="wrap">
         <?php
-        $query = "SELECT creationTime,completionTime,dueDate,content,title FROM post,Access,team WHERE  Access.PostID=post.PostID AND Access.team_ID=team.team_ID";
+        $teamID = $_SESSION["teamid"];
+        $query = "SELECT creationTime,completionTime,dueDate,content,title FROM post,Access,team WHERE  Access.PostID=post.PostID AND Access.team_ID='$teamID'";
         $result = $mysqli->query($query);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {

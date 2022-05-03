@@ -43,7 +43,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
     
         <?php
         $email = $_SESSION['email'];
-        $query= "SELECT name, description FROM team, join1 WHERE  join1.team_ID=team.team_ID AND join1.email='$email'" ;
+        $query= "SELECT * FROM team, join1 WHERE  join1.team_ID=team.team_ID AND join1.email='$email'" ;
         $result = $mysqli->query($query);
         if ($result->num_rows>0)
         {
@@ -66,7 +66,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
                     }
                         echo "<br><div id='div3'> <text>Description:</text><br>
                         <text style='color: #706f6f;'>
-                        &nbsp; &nbsp;&nbsp;&nbsp;". $row["description"]. "</text></div></div><br><button>Join</button></div>";
+                        &nbsp; &nbsp;&nbsp;&nbsp;". $row["description"]. "</text></div></div><br><a href='home.php?tid=". $row["team_ID"]. "'>Join</a></div>";
                      
                 }
             
