@@ -26,7 +26,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
 <?php
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
-    $user = "SELECT team_ID FROM join1, users WHERE team_ID='$team_ID' AND users.email = join1.email;";
+    $user = "SELECT DISTINCT team_ID FROM join1, users WHERE users.email = join1.email AND username='$username'";
     $result = $mysqli->query($user);
     
     //echo '<script>
@@ -41,7 +41,9 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
     <h3> Email: <?php echo $email;?> </h3>
     <h3> Team(s): 
         <?php while($row = $result -> fetch_assoc()){
-        echo $row["team_ID"];}?> 
+        echo $row["team_ID"];
+        echo "\r\n";}
+        ?> 
     </h3> 
     <div style="text-align: left; margin-left: 1300; position:absolute">
     <br><text onclick="location.href='reset.html'" id="a"> Reset Password</text><br>
