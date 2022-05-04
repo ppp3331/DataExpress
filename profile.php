@@ -40,6 +40,8 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
     <img src="1907072.png" style="width: 300px; height:300px;">
     <h3> User: <?php echo $username;?></h3>
     <h3> Email: <?php echo $email;?> </h3>
+    <div style="text-align: left; margin-left: 1300; position:absolute">
+    <br><text onclick="location.href='reset.html'" id="a"> Reset Password</text><br>
     <!-- <h3> Team: 
         <?php //while($row = $result -> fetch_assoc()){
         //echo $row["team_ID"];}?> 
