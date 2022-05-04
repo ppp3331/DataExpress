@@ -18,7 +18,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
         max-width: 900px;
         height: 500px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        background-image: linear-gradient(to right, #f0f4f7, #FFFACD, #E0FFFF);
+        
     }  
     </style>
     </head>
@@ -37,10 +37,13 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
 
 <div class="profile">
     <h1>PROFILE:</h1>
+    <img src="profile.jpg" style="width: 300px; height:300px;">
     <h3> User: <?php echo $username;?></h3>
     <h3> Email: <?php echo $email;?> </h3>
-    <h3> Team: <?php while($row = $result -> fetch_assoc()){
-        echo $row["team_ID"];}?> </h3> 
+    <h3> Team: 
+        <?php while($row = $result -> fetch_assoc()){
+        echo $row["team_ID"];}?> 
+    </h3> 
     
     <!-- echo "<br>";
     echo $email;
