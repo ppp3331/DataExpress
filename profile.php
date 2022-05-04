@@ -26,7 +26,6 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
 <?php
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
-    $team_ID = $_SESSION['team_ID'];
     $user = "SELECT team_ID FROM join1, users WHERE team_ID='$team_ID' AND users.email = join1.email;";
     $result = $mysqli->query($user);
     
