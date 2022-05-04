@@ -37,13 +37,13 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
 
 <div class="profile">
     <h1>PROFILE:</h1>
-    <img src="profile.jpg" style="width: 300px; height:300px;">
+    <img src="1907072.png" style="width: 300px; height:300px;">
     <h3> User: <?php echo $username;?></h3>
     <h3> Email: <?php echo $email;?> </h3>
-    <h3> Team: 
-        <?php while($row = $result -> fetch_assoc()){
-        echo $row["team_ID"];}?> 
-    </h3> 
+    <!-- <h3> Team: 
+        <?php //while($row = $result -> fetch_assoc()){
+        //echo $row["team_ID"];}?> 
+    </h3>  -->
     
     <!-- echo "<br>";
     echo $email;
