@@ -9,7 +9,7 @@ $mysqli = new mysqli("mysql.eecs.ku.edu", "b884l228", "einahH7a", "b884l228");
     $username = $_SESSION['username'];
     $password = $_POST['password'];
     //$password = $_SESSION['password'];
-    $user = "UPDATE users SET password = $password WHERE username='$username';";
+    $user = "UPDATE users SET password = '$password' WHERE username='$username';";
     $result = $mysqli->query($user);
 
     if ($mysqli->query($user)== TRUE)
